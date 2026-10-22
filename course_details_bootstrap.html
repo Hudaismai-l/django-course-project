@@ -1,0 +1,16 @@
+{% extends "onlinecourse/base.html" %}
+{% block content %}
+<div class="container mt-5">
+    <h1>{{ course.name }}</h1>
+    <p>{{ course.description }}</p>
+    
+    <h3>Lessons:</h3>
+    <ul class="list-group">
+        {% for lesson in course.lesson_set.all %}
+            <li class="list-group-item">
+                <strong>{{ lesson.title }}</strong>: {{ lesson.content }}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
